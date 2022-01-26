@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-01-17 14:05:09
- * @LastEditTime: 2022-01-25 17:19:41
+ * @LastEditTime: 2022-01-26 15:39:11
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \nodeJSProject\README.md
@@ -15,6 +15,7 @@
 - Express
 - MongoDB
 - ejs
+- bcrypt 密码加密
 
 ### 连接过程
 
@@ -61,6 +62,8 @@
   - 接收参数（post）
     const {username} = req.body
 
+  - 在使用 models 时要使用 async-await 来处理数据库异步问题
+
 - 模板
   views 中的 ejs 文件是将返回内容填充到设置的模板中，并返回给前端。
   在 controllers 中 使用 res.render 来指定使用的模板及要返回的内容
@@ -68,6 +71,7 @@
   - 模板内容
     errorCode 是错误码；
     data 是装填 controllers 给的数据；
+  - 对应的接口里的内容是 result.data 里面的内容
 
 - 数据库
   - 【问题】： mongo: command not found
@@ -78,3 +82,25 @@
       test 为数据库名称，会自动创建数据库
   - 创建 models 用来做数据库操作
     然后暴露给 controllers，让 controllers 传值
+
+### 相关工具
+
+#### bcrypt
+
+- 异步加密
+- utils/tools/ bcryptHash
+
+#### cors
+
+- 跨域工具
+
+### 常用操作
+
+#### 增
+
+- models/users signup
+
+#### 查
+
+- models/users findUser
+  查找是否存在
