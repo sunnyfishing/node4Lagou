@@ -9,7 +9,7 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/lagou',{
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 var db = mongoose.connection;
@@ -19,7 +19,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 // 构建 usersSchema
 var usersSchema = mongoose.Schema({
   username:String,
-  password: String
+  password: String,
+  phone: String,
 })
 
 var Users = mongoose.model('users', usersSchema)  //会被作为Collections

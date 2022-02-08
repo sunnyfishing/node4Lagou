@@ -11,11 +11,13 @@
 
 ### 后端
 
-- Node.js
-- Express
-- MongoDB
-- ejs
+- Node.js 语言
+- Express 框架
+- MongoDB 数据库
+- ejs 模板
 - bcrypt 密码加密
+- mongoose 数据库语法
+- robo 3T 数据库可视化工具
 
 ### 连接过程
 
@@ -94,7 +96,7 @@
 
 - 跨域工具
 
-### 常用操作
+### mongoDB 常用操作
 
 #### 增
 
@@ -104,3 +106,16 @@
 
 - models/users findUser
   查找是否存在
+
+### 笔记
+
+- post 请求获取参数
+  req.body.pageSize
+- get 请求获取参数
+  req.query.pageSize
+
+### 报错
+
+- Cannot set headers after they are sent to the client
+
+* res.render()要放在嵌套的 if-else 里面
