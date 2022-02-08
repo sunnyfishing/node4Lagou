@@ -9,6 +9,9 @@
 
 # nodeJSProject
 
+- 起 node 服务：npm start
+- 起数据库：mongo
+
 ### 后端
 
 - Node.js 语言
@@ -24,11 +27,11 @@
 1. 通过 bin/www 起服务
 2. 服务接收到请求后，在 app.js 进行路由分发到 rouers 文件夹下的具体业务路由
 3. 在业务路由里面匹配对应的操作路由
-4. 在路由中对数据处理进行抽离到 controllers
-5. controllers 中使用 res.render 将数据渲染到 ejs 模板中并返回接口
+4. 在路由中对数据处理的部分进行抽离到 controllers
+5. controllers 中使用 res.render 将数据渲染到 views 模板(ejs)中并返回接口
 6. controllers 中引入 models
 7. models 中是接收数据并传给数据库
-8. utils/db.js 是想数据库中做读写的操作
+8. utils/db.js 创建并初始化数据库
 
 ### 配置步骤
 

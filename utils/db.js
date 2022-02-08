@@ -25,4 +25,16 @@ var usersSchema = mongoose.Schema({
 
 var Users = mongoose.model('users', usersSchema)  //会被作为Collections
 
-exports.Users = Users
+// 构建 orgSchema
+var orgSchema = mongoose.Schema({
+  orgName:String,
+  createTime: String,
+  creator: String,
+})
+
+var Org = mongoose.model('org', orgSchema)  //会被作为Collections
+
+module.exports={
+  Users,
+  Org
+}
